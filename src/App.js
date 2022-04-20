@@ -1,11 +1,14 @@
 // styles
 import './App.scss'
 
+// components
+import Home from './Home.js'
+
 function App() {
   return (
     <div className="app">
 
-      rest countries api 
+      <Home/>
 
     </div>
   )
