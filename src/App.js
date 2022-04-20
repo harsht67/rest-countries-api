@@ -2,13 +2,29 @@
 import './App.scss'
 
 // components
-import Home from './Home.js'
+import Header from "./Header"
+import Home from './Home'
+import CountryPage from './CountryPage'
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
   return (
     <div className="app">
 
-      <Home/>
+      <Router>
+
+        <Header/>
+
+        <Switch>
+
+          <Route exact path='/' component={Home} />
+
+          <Route exact path='/:name' component={CountryPage} />
+
+        </Switch>
+
+      </Router>
 
     </div>
   )

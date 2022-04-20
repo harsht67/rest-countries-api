@@ -2,7 +2,6 @@
 import './Home.scss'
 
 // components
-import Header from "./Header"
 import Search from './Search'
 import Filter from './Filter'
 import Flag from './Flag'
@@ -28,24 +27,17 @@ function Home() {
     return (
         <div className="home">
         
-            <Header/>
+            <section className="home__header">
+                
+                <Search/>
 
-            <section className="home__main">
+                <Filter/>
 
-                <section className="main__header">
-                    
-                    <Search/>
+            </section>
 
-                    <Filter/>
+            <section className="home__content">
 
-                </section>
-
-                <section className="main__content">
-
-                    { flags && flags.map(flag => <Flag data={flag} />) }
-
-                </section>
-
+                { flags && flags.map(flag => <Flag data={flag} />) }
 
             </section>
         
