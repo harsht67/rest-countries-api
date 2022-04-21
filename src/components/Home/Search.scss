@@ -1,15 +1,23 @@
 .search {
     padding: 0.25rem 1rem;
-    border: 1px solid #000000;
     border-radius: var(--br);
     display: flex;
     align-items: center;
+    background-color: var(--frg);
+    box-shadow: 1px 1px 10px var(--shadow);
+
+    .icon {
+        color: var(--txt2);
+    }
 
     input {
         width: 100%;
         outline: none;
         border: none;
         padding: 0.5rem;
+        font-size: inherit;
+        background-color: transparent;
+        color: var(--txt);
     }
 
 }

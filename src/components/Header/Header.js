@@ -5,7 +5,12 @@ import './Header.scss'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 
-function Header() {
+function Header(props) {
+
+    const toggleTheme = () => {
+        props.toggleTheme()
+    }
+
     return (
         <div className='header'>
             
@@ -15,11 +20,21 @@ function Header() {
             
             </h1>
 
-            <div className='header__btn'>
+            <div 
+                className='header__btn'
+                onClick={toggleTheme}
+            >
 
-                <DarkModeIcon className="icon"/>
-                
-                dark mode
+                {props.theme == 'light'
+                    ? <>
+                        <DarkModeIcon className="icon" />
+                        dark mode
+                    </>
+                    : <>
+                        <LightModeIcon className="icon" />
+                        light mode
+                    </>
+                }
 
             </div>
     

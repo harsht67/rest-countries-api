@@ -1,8 +1,11 @@
 .flag {
     width: 80%;
     margin: 0 auto 2rem;
-    border: 1px solid #000000;
     border-radius: var(--br);
+    overflow: hidden;
+    background-color: var(--frg);
+    color: var(--txt2);
+    box-shadow: 1px 1px 10px var(--shadow);
 
     .flag__img {
         width: 100%;
@@ -16,11 +19,13 @@
         .flag__title {
             font-size: var(--fs-500);
             margin-block-end: 1rem;
+            color: var(--txt);
         }
 
         .imp { 
             font-weight: 600;
             margin-inline-end: 0.25rem;
+            color: var(--txt);
         }
 
     }

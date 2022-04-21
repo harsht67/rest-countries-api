@@ -23,6 +23,7 @@ function Home() {
         setFlags(Object.values(res.data))
     }
 
+    // fetch flags data on initial load
     useEffect(() => {
         fetchData()
     }, [])

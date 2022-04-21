@@ -7,24 +7,45 @@ import Home from './components/Home/Home'
 import CountryPage from './components/CountryPage/CountryPage'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
+import themes from './themes'
+import { GlobalStyle } from './styles'
+import { useState } from 'react'
 
 function App() {
+
+  const [theme, setTheme] = useState('light')
+
+  const toggleTheme = () => {
+    setTheme(prev => {
+      return prev=='dark' ? 'light' : 'dark'
+    })
+  }
+
   return (
     <div className="app">
+      <ThemeProvider theme={themes[theme]}>
 
-      <Router>
+        <GlobalStyle/>
 
-        <Header/>
+        <Router>
 
-        <Switch>
+          <Header
+            theme={theme}
+            toggleTheme={toggleTheme}
+          />
 
-          <Route exact path='/' component={Home} />
+          <Switch>
 
-          <Route exact path='/:name' component={CountryPage} />
+            <Route exact path='/' component={Home} />
 
-        </Switch>
+            <Route exact path='/:name' component={CountryPage} />
 
-      </Router>
+          </Switch>
+
+        </Router>
+
+      </ThemeProvider>
 
     </div>
   )

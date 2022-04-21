@@ -1,11 +1,11 @@
 .countryPage {
     padding: 2rem;
+    color: var(--txt2);
 
     .countryPage__backBtn {
         width: fit-content;
         border: none;
         outline: none;
-        border: 1px solid #000000;
         padding: 0.5rem 1.5rem;
         display: flex;
         align-items: center;
@@ -13,6 +13,10 @@
         text-transform: capitalize;
         font-weight: 600;
         margin-block-end: 2rem;
+        border-radius: var(--br);
+        background-color: var(--frg);
+        color: var(--txt);
+        box-shadow: 1px 1px 10px var(--shadow);
     }
 
     .countryPage__content {
@@ -36,16 +40,19 @@
         .desc__title {
             width: 100%;
             font-size: var(--fs-700);
+            color: var(--txt);
         }
 
         .desc__subTitle {
             width: 100%;
             font-size: var(--fs-400);
+            color: var(--txt);
         }
 
         .imp {
             font-weight: 600;
             margin-inline-end: 0.25rem;
+            color: var(--txt);
         }
 
         p {
@@ -70,9 +77,11 @@
             
             .border__box {
                 padding: 0.5rem;
-                border: 1px solid #000000;
                 width: 8rem;
                 text-align: center;
+                border-radius: var(--br);
+                background-color: var(--frg);   
+                box-shadow: 1px 1px 10px var(--shadow);
             }
         
         }

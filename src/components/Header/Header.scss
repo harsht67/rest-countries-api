@@ -3,7 +3,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-block-end: 1px solid #000000;
+    background-color: var(--frg);
+    color: var(--txt);
+    box-shadow: 1px 1px 10px var(--shadow);
 
     .header__title {
         font-size: var(--fs-500);
