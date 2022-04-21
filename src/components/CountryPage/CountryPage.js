@@ -4,7 +4,7 @@ import './CountryPage.scss'
 // icons
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
-import { useParams } from 'react-router'
+import { useParams, useHistory } from 'react-router'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -13,6 +13,8 @@ function CountryPage() {
     const { name } = useParams()
 
     const [country, setCountry] = useState('')
+
+    const history = useHistory()
 
     useEffect(() => {
 
@@ -25,6 +27,10 @@ function CountryPage() {
 
     }, [])
 
+    const goToFunc = () => {
+        history.push('/')
+    }
+
     const { flags, nativeName, population, region, capital, topLevelDomain, currencies, languages, borders } = country
     
     return(
@@ -35,6 +41,7 @@ function CountryPage() {
 
                     <button
                         className="countryPage__backBtn"
+                        onClick={goToFunc}
                     >
 
                         <ArrowBackIcon/> back

@@ -2,9 +2,9 @@
 import './App.scss'
 
 // components
-import Header from "./Header"
-import Home from './Home'
-import CountryPage from './CountryPage'
+import Header from "./components/Header/Header"
+import Home from './components/Home/Home'
+import CountryPage from './components/CountryPage/CountryPage'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
