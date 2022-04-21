@@ -56,7 +56,7 @@ function CountryPage() {
 
                     <section className="countryPage__desc">
 
-                        <h3 classNAme="desc__title">
+                        <h3 className="desc__title">
                             {name}
                         </h3>
 

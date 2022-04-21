@@ -6,13 +6,15 @@
     border-block-end: 1px solid #000000;
 
     .header__title {
-        font-size: 1.25rem;
+        font-size: var(--fs-500);
     }
 
     .header__btn {
         display: flex;
         align-items: center;
+        gap: 0.5rem;
         text-transform: capitalize;
+        font-weight: 600;
     }
 
 }

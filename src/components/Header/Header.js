@@ -17,7 +17,9 @@ function Header() {
 
             <div className='header__btn'>
 
-                <DarkModeIcon/> dark mode
+                <DarkModeIcon className="icon"/>
+                
+                dark mode
 
             </div>
     

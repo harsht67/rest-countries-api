@@ -11,7 +11,7 @@ function Flag(props) {
         history.push('/'+name)
     }
 
-    const { name, population, region, capital } = props.data
+    const { flags, name, population, region, capital } = props.data
 
     return(
         <article 
@@ -19,21 +19,48 @@ function Flag(props) {
             onClick={goToFunc}
         >
 
-            <h3>
-                {name}
-            </h3>   
+            <img
+                className="flag__img"
+                src={flags.svg}
+                alt='country flag'
+            />
 
-            <p>
-                Popolution: {population.toLocaleString()}
-            </p>   
+            <section className="flag__desc">
 
-            <p>
-                Region: {region}
-            </p>   
-            
-            <p>
-                Capital: {capital}
-            </p>   
+                <h3 className="flag__title">
+                    {name}
+                </h3>   
+
+                <p>
+                    <span className="imp">
+                        Populution:
+                    </span>
+                    
+                    {population.toLocaleString()}
+                
+                </p>   
+
+                <p>
+
+                    <span className="imp">
+                        Region:
+                    </span>
+                    
+                    {region}
+                
+                </p>   
+                
+                <p>
+
+                    <span className="imp">
+                        Capital:
+                    </span>
+
+                    {capital}
+
+                </p>   
+
+            </section>
 
         </article>
     )
