@@ -19,7 +19,8 @@ function CountryPage() {
     useEffect(() => {
 
         const fetchData = async () => {
-            const res = await axios.get('https://restcountries.com/v2/name/'+name)
+            const res = await axios.get('https://restcountries.com/v3.1/name/'+name)
+        console.log(res.data)
             setCountry(Object.values(res.data)[0])
         }
 
@@ -31,7 +32,7 @@ function CountryPage() {
         history.push('/')
     }
 
-    const { flags, nativeName, population, region, capital, topLevelDomain, currencies, languages, borders } = country
+    const { flags, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages } = country
     
     return(
         <div className="countryPage">
@@ -97,6 +98,9 @@ function CountryPage() {
                                     <span className="imp">
                                         sub-region:
                                     </span> 
+
+                                    {subregion}
+
                                 </p>
                                 
                                 <p>
@@ -129,7 +133,7 @@ function CountryPage() {
                                         currencies:
                                     </span>
                                     
-                                    {currencies.map(currency => <span>{currency.name}</span>)}
+                                    {Object.keys(currencies).map(currency => <span>{currency}</span>)}
                                 
                                 </p>
 
@@ -139,27 +143,29 @@ function CountryPage() {
                                         launguages:
                                     </span>
                                     
-                                    {languages.map(language => <span>{language.name}</span>)}
+                                    {Object.values(languages).map(language => <span>{language}</span>)}
                                 
                                 </p>
 
                             </div>
 
-                            <div className="desc__border">
+                            { country.borders &&
+                                <div className="desc__border">
 
-                                <h3 className="desc__subTitle">
-                                    border countries: 
-                                </h3>
+                                    <h3 className="desc__subTitle">
+                                        border countries: 
+                                    </h3>
 
-                                { borders.map(border => (
-                                    <div
-                                        className="border__box"
-                                    >
-                                        {border}
-                                    </div>)) 
-                                }
+                                    { country.borders.map(border => (
+                                        <div
+                                            className="border__box"
+                                        >
+                                            {border}
+                                        </div>)) 
+                                    }
 
-                            </div>
+                                </div>
+                            }
 
                         </section>
 

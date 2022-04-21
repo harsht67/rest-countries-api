@@ -7,6 +7,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { useState } from 'react'
 
 const regions = [
+    'all',
     'africa',
     'america',
     'asia',
@@ -14,9 +15,7 @@ const regions = [
     'oceania',
 ]
 
-function Filter() {
-
-    const [region, setRegion] = useState('Filter by Region')
+function Filter(props) {
 
     const [dropdown, setDropdown] = useState(false)
 
@@ -24,9 +23,9 @@ function Filter() {
     const changeRegion = (e) => {
         const newRegion = e.target.getAttribute('data-val')
 
-        setRegion(newRegion)
-
         toggleDropdown()
+
+        props.changeRegion(newRegion)
     }
 
     // opens/closes dropdown
@@ -43,7 +42,7 @@ function Filter() {
             >
 
                 <span>
-                    {region}
+                    {props.region}
                 </span>
 
                 <KeyboardArrowDownIcon classNAme="icon" />

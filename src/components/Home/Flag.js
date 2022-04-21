@@ -8,7 +8,7 @@ function Flag(props) {
     const history = useHistory()
 
     const goToFunc = () => {
-        history.push('/'+name)
+        history.push('/'+name.common)
     }
 
     const { flags, name, population, region, capital } = props.data
@@ -28,7 +28,7 @@ function Flag(props) {
             <section className="flag__desc">
 
                 <h3 className="flag__title">
-                    {name}
+                    {name.common}
                 </h3>   
 
                 <p>
