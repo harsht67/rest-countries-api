@@ -7,6 +7,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { useParams, useHistory } from 'react-router'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import LoadingSpinner from '../Global/LoadingSpinner'
 
 function CountryPage() {
     
@@ -20,7 +21,6 @@ function CountryPage() {
 
         const fetchData = async () => {
             const res = await axios.get('https://restcountries.com/v3.1/name/'+name)
-        console.log(res.data)
             setCountry(Object.values(res.data)[0])
         }
 
@@ -32,13 +32,14 @@ function CountryPage() {
         history.push('/')
     }
 
-    const { flags, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages } = country
+    const { flags, population, region, subregion, capital, topLevelDomain, currencies, languages } = country
     
     return(
         <div className="countryPage">
                 
-            { country &&
-                <>
+            { !country
+                ? <LoadingSpinner/>
+                : <>
 
                     <button
                         className="countryPage__backBtn"
@@ -71,7 +72,7 @@ function CountryPage() {
                                         native name:
                                     </span>
                                     
-                                    {nativeName}
+                                    {Object.values(country.name.nativeName).map(n => <span>{n.official}</span>)}
                                 
                                 </p>
 

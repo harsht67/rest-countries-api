@@ -8,10 +8,11 @@ import Flag from './Flag'
 
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import LoadingSpinner from '../Global/LoadingSpinner'
 
 function Home() {
 
-    const [flags, setFlags] = useState([])
+    const [flags, setFlags] = useState(null)
 
     const [region, setRegion] = useState('Filter by Region')
 
@@ -59,17 +60,20 @@ function Home() {
 
             </section>
 
-            <section className="home__content">
+            {!flags 
+                ? <LoadingSpinner/>  
+                : <section className="home__content">
 
-                {flags &&
-                    flags.map(flag => {
-                        let name = flag.name.common.toLowerCase() 
+                    {flags.map(flag => {
+                        let name = flag.name.common.toLowerCase()
                         let f = name.includes(search.toLowerCase()) ? true : false
                         return f ? <Flag data={flag} /> : <></>
-                    })
-                }
+                    })}
 
-            </section>
+                </section>
+            }
+
+            
         
         </div>
     )

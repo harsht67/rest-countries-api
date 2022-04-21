@@ -1,0 +1,25 @@
+.loadingSpinner__container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .loadingSpinner__spinner {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        border: 5px solid var(--txt2);
+        border-block-start: 5px solid var(--bck);
+        animation: spinner 1.5s linear infinite;
+    }
+
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
