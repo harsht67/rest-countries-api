@@ -39,7 +39,7 @@ function App() {
 
             <Route exact path='/' component={Home} />
 
-            <Route exact path='/:name' component={CountryPage} />
+            <Route exact path='/:dir/:name' component={CountryPage} />
 
           </Switch>
 

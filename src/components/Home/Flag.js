@@ -8,7 +8,7 @@ function Flag(props) {
     const history = useHistory()
 
     const goToFunc = () => {
-        history.push('/'+name.common)
+        history.push('/name/'+name.common)
     }
 
     const { flags, name, population, region, capital } = props.data

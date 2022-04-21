@@ -8,10 +8,11 @@ import { useParams, useHistory } from 'react-router'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import LoadingSpinner from '../Global/LoadingSpinner'
+import { Link } from 'react-router-dom'
 
 function CountryPage() {
     
-    const { name } = useParams()
+    const { dir, name } = useParams()
 
     const [country, setCountry] = useState('')
 
@@ -20,19 +21,19 @@ function CountryPage() {
     useEffect(() => {
 
         const fetchData = async () => {
-            const res = await axios.get('https://restcountries.com/v3.1/name/'+name)
+            const res = await axios.get('https://restcountries.com/v3.1/'+dir+'/'+name)
             setCountry(Object.values(res.data)[0])
         }
 
         fetchData()
 
-    }, [])
+    }, [name])
 
-    const goToFunc = () => {
+    const goTo = () => {
         history.push('/')
     }
 
-    const { flags, population, region, subregion, capital, topLevelDomain, currencies, languages } = country
+    const { flags, population, region, subregion, capital, tld, currencies, languages } = country
     
     return(
         <div className="countryPage">
@@ -43,7 +44,7 @@ function CountryPage() {
 
                     <button
                         className="countryPage__backBtn"
-                        onClick={goToFunc}
+                        onClick={goTo}
                     >
 
                         <ArrowBackIcon/> back
@@ -61,7 +62,7 @@ function CountryPage() {
                         <section className="countryPage__desc">
 
                             <h3 className="desc__title">
-                                {name}
+                                {country.name.common}
                             </h3>
 
                             <div className='desc__grp1'>
@@ -124,7 +125,7 @@ function CountryPage() {
                                         top level domain:
                                     </span>
                                     
-                                    {topLevelDomain}
+                                    {tld.map(domain => <span>{domain}</span>)}
                                 
                                 </p>
 
@@ -158,11 +159,12 @@ function CountryPage() {
                                     </h3>
 
                                     { country.borders.map(border => (
-                                        <div
+                                        <Link 
+                                            to={`/alpha/${border}`}
                                             className="border__box"
                                         >
                                             {border}
-                                        </div>)) 
+                                        </Link>)) 
                                     }
 
                                 </div>
