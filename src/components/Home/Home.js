@@ -15,6 +15,8 @@ function Home() {
 
     const [region, setRegion] = useState('Filter by Region')
 
+    const [search, setSearch] = useState('')
+
     // fetch flags data
     const fetchData = async (region="all") => {
         let suffix = region=="all" ? "all" : "region/"+region
@@ -35,12 +37,20 @@ function Home() {
         fetchData(newRegion)
     }
 
+    // updates search field
+    const updateSearch = (newValue) => {
+        setSearch(newValue)
+    }
+
     return (
         <div className="home">
     
             <section className="home__header">
                 
-                <Search/>
+                <Search
+                    search={search}
+                    updateSearch={updateSearch}
+                />
 
                 <Filter
                     region={region}
@@ -51,7 +61,13 @@ function Home() {
 
             <section className="home__content">
 
-                { flags && flags.map(flag => <Flag data={flag} />) }
+                {flags &&
+                    flags.map(flag => {
+                        let name = flag.name.common.toLowerCase() 
+                        let f = name.includes(search.toLowerCase()) ? true : false
+                        return f ? <Flag data={flag} /> : <></>
+                    })
+                }
 
             </section>
         
