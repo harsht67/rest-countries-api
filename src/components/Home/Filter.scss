@@ -2,7 +2,6 @@
     position: relative;
 
     .filter__btn {
-        width: 60%;
         border: 1px solid #000000;
         border-radius: var(--br);
         padding: 0.75rem;
@@ -20,7 +19,7 @@
         padding: 0.5rem 1rem;
         position: absolute;
         top: 3.5rem;
-        width: 60%;
+        width: 100%;
         border-radius: var(--br);
         background-color: #ffffff;
         list-style-type: none;

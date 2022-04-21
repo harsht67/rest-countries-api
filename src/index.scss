@@ -2,6 +2,9 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Nunito sans', sans-serif;
+}
+
+body {
     font-size: 14px;
 }
 
@@ -9,4 +12,12 @@
     --fs-500: 1.25rem;
     --fs-700: 1.5rem;
     --br: 0.25rem;
+}
+
+@media screen and (min-width: 1200px) {
+    
+    body {
+        font-size: 16px;
+    }
+
 }
