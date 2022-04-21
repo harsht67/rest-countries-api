@@ -18,6 +18,16 @@
 
     .home__content {
         padding: 1rem;
+
+        .hide--flag {
+            display: none;
+            border: 2px solid hotpink;
+        }
+
+        .show--flag {
+            display: block;
+        }
+
     }
 
 }
