@@ -48,116 +48,122 @@ function CountryPage() {
                     
                     </button>
 
-                    <img
-                        className="countryPage__img"
-                        src={flags.svg}
-                        alt='country flag'
-                    />
+                    <div className="countryPage__content">
 
-                    <section className="countryPage__desc">
+                        <img
+                            className="countryPage__img"
+                            src={flags.svg}
+                            alt='country flag'
+                        />
 
-                        <h3 className="desc__title">
-                            {name}
-                        </h3>
+                        <section className="countryPage__desc">
 
-                        <hr/>
-
-                        <p>
-                        
-                            <span className="imp">
-                                native name:
-                            </span>
-                            
-                            {nativeName}
-                        
-                        </p>
-
-                        <p>
-                            <span className="imp">
-                                population:
-                            </span>
-                            
-                            {population.toLocaleString()}
-        
-                        </p>
-
-                        <p>
-                        
-                            <span className="imp">
-                                region:
-                            </span> 
-                        
-                            {region}
-                        
-                        </p>
-                        
-                        <p>
-                            <span className="imp">
-                                sub-region:
-                            </span> 
-                        </p>
-                        
-                        <p>
-                        
-                            <span className="imp">
-                                capital:
-                            </span>
-                        
-                            {capital}
-                        
-                        </p>
-
-                        <hr/>
-
-                        <p>
-                            
-                            <span className="imp">
-                                top level domain:
-                            </span>
-                            
-                            {topLevelDomain}
-                        
-                        </p>
-
-                        <p>
-                            
-                            <span className="imp">
-                                currencies:
-                            </span>
-                            
-                            {currencies.map(currency => <span>{currency.name}</span>)}
-                        
-                        </p>
-
-                        <p className="desc__language" >
-
-                            <span className="imp">
-                                launguages:
-                            </span>
-                            
-                            {languages.map(language => <span>{language.name}</span>)}
-                        
-                        </p>
-
-                        <hr/>
-
-                        <div className="desc__border">
-
-                            <h3 className="desc__subTitle">
-                                border countries: 
+                            <h3 className="desc__title">
+                                {name}
                             </h3>
 
-                            { borders.map(border => (
-                                <div
-                                    className="border__box"
-                                >
-                                    {border}
-                                </div>)) 
-                            }
+                            <div className='desc__grp1'>
 
-                        </div>
+                                <p>
+                                
+                                    <span className="imp">
+                                        native name:
+                                    </span>
+                                    
+                                    {nativeName}
+                                
+                                </p>
 
-                    </section>
+                                <p>
+                                    <span className="imp">
+                                        population:
+                                    </span>
+                                    
+                                    {population.toLocaleString()}
+                
+                                </p>
+
+                                <p>
+                                
+                                    <span className="imp">
+                                        region:
+                                    </span> 
+                                
+                                    {region}
+                                
+                                </p>
+                                
+                                <p>
+                                    <span className="imp">
+                                        sub-region:
+                                    </span> 
+                                </p>
+                                
+                                <p>
+                                
+                                    <span className="imp">
+                                        capital:
+                                    </span>
+                                
+                                    {capital}
+                                
+                                </p>
+                            
+                            </div>
+
+                            <div className='desc__grp2'>
+
+                                <p>
+                                    
+                                    <span className="imp">
+                                        top level domain:
+                                    </span>
+                                    
+                                    {topLevelDomain}
+                                
+                                </p>
+
+                                <p>
+                                    
+                                    <span className="imp">
+                                        currencies:
+                                    </span>
+                                    
+                                    {currencies.map(currency => <span>{currency.name}</span>)}
+                                
+                                </p>
+
+                                <p className="desc__language" >
+
+                                    <span className="imp">
+                                        launguages:
+                                    </span>
+                                    
+                                    {languages.map(language => <span>{language.name}</span>)}
+                                
+                                </p>
+
+                            </div>
+
+                            <div className="desc__border">
+
+                                <h3 className="desc__subTitle">
+                                    border countries: 
+                                </h3>
+
+                                { borders.map(border => (
+                                    <div
+                                        className="border__box"
+                                    >
+                                        {border}
+                                    </div>)) 
+                                }
+
+                            </div>
+
+                        </section>
+
+                    </div>
                 
                 </>
             
