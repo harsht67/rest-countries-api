@@ -17,6 +17,12 @@
         background-color: var(--frg);
         color: var(--txt);
         box-shadow: 1px 1px 10px var(--shadow);
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
     }
 
     .countryPage__content {

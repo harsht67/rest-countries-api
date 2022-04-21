@@ -9,6 +9,11 @@
 
     .header__title {
         font-size: var(--fs-500);
+
+        &:hover {
+            cursor: pointer;
+        }
+
     }
 
     .header__btn {
@@ -17,6 +22,12 @@
         gap: 0.5rem;
         text-transform: capitalize;
         font-weight: 600;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.75;
+        }
+
     }
 
 }

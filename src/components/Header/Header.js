@@ -5,16 +5,27 @@ import './Header.scss'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 
+import { useHistory } from 'react-router'
+
 function Header(props) {
+
+    const history = useHistory()
 
     const toggleTheme = () => {
         props.toggleTheme()
     }
 
+    const goToFunc = () => {
+        history.push('/')
+    }
+
     return (
         <div className='header'>
             
-            <h1 className='header__title'>
+            <h1 
+                className='header__title'
+                onClick={goToFunc}
+            >
 
                 Where in the world?
             

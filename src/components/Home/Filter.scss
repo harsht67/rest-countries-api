@@ -16,6 +16,10 @@
             text-transform: capitalize;
         }
 
+        &:hover {
+            cursor: pointer;
+        }
+
     }
 
     .filter__data {
@@ -28,9 +32,14 @@
         background-color: var(--frg);   
         box-shadow: 1px 1px 10px var(--shadow);
 
-        > * {
+        .filter__item {
             padding: 0.25rem;
             text-transform: capitalize;
+
+            &:hover {
+                cursor: pointer;
+                color: var(--txt);
+            }
 
         }
 
