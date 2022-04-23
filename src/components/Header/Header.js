@@ -5,18 +5,18 @@ import './Header.scss'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router'
 
 function Header(props) {
 
-    const history = useHistory()
+    const navigate = useNavigate()
 
     const toggleTheme = () => {
         props.toggleTheme()
     }
 
     const goToFunc = () => {
-        history.push('/')
+        navigate('/')
     }
 
     return (

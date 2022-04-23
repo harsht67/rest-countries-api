@@ -4,7 +4,7 @@ import './CountryPage.scss'
 // icons
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
-import { useParams, useHistory } from 'react-router'
+import { useParams, useNavigate } from 'react-router'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import LoadingSpinner from '../Global/LoadingSpinner'
@@ -16,7 +16,7 @@ function CountryPage() {
 
     const [country, setCountry] = useState('')
 
-    const history = useHistory()
+    const navigate = useNavigate()
 
     useEffect(() => {
 
@@ -30,7 +30,7 @@ function CountryPage() {
     }, [name])
 
     const goTo = () => {
-        history.push('/')
+        navigate('/')
     }
 
     const { flags, population, region, subregion, capital, tld, currencies, languages } = country

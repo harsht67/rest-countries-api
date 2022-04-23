@@ -1,14 +1,14 @@
 // styles
 import './Flag.scss'
 
-import { useHistory } from 'react-router' 
+import { useNavigate } from 'react-router' 
 
 function Flag(props) {
 
-    const history = useHistory()
+    const navigate = useNavigate()
 
     const goToFunc = () => {
-        history.push('/name/'+name.common)
+        navigate('/name/'+name.common)
     }
 
     const { flags, name, population, region, capital } = props.data

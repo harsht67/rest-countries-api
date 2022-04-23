@@ -6,7 +6,7 @@ import Header from "./components/Header/Header"
 import Home from './components/Home/Home'
 import CountryPage from './components/CountryPage/CountryPage'
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import themes from './themes'
 import { GlobalStyle } from './styles'
@@ -35,13 +35,13 @@ function App() {
             toggleTheme={toggleTheme}
           />
 
-          <Switch>
+          <Routes>
 
-            <Route exact path='/' component={Home} />
+            <Route path='/' element={<Home/>} />
 
-            <Route exact path='/:dir/:name' component={CountryPage} />
+            <Route path='/:dir/:name' element={<CountryPage/>} />
 
-          </Switch>
+          </Routes>
 
         </Router>
 
