@@ -33,7 +33,7 @@ function Flag(props) {
 
                 <p>
                     <span className="imp">
-                        Populution:
+                        Population:
                     </span>
                     
                     {population.toLocaleString()}
